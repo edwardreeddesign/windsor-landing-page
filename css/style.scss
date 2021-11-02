@@ -1,0 +1,179 @@
+$clr-dark: #07738e;
+$clr-medium: #4884ad;
+$clr-highlight: #6d9d38;
+$clr-light: #e7eff8;
+
+$ff-headings: 'Merriweather', serif;
+$ff-main: 'Inter', sans-serif;
+$ff-accent: 'Lato', sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  letter-spacing: 0.2rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+.title {
+  font-family: $ff-headings;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgba($clr-medium, 0.7);
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sub-info1,
+.sub-info2 {
+  padding: 2rem;
+}
+
+.hero {
+  background-image: url(/imgs/ambassador-bridge.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .title {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+    .capital {
+      font-size: clamp(4rem, 10vw, 6.5rem);
+    }
+
+    .small {
+      font-size: 3rem;
+      text-transform: lowercase;
+    }
+  }
+
+  .text {
+    background: rgba($clr-light, 0.7);
+    color: darken($clr-dark, 30);
+    font-size: 1.4rem;
+  }
+
+  a {
+    font-size: 1.5rem;
+    color: $clr-light;
+    background: $clr-highlight;
+    margin: 2rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 300ms ease;
+
+    &:hover {
+      background: darken($clr-highlight, 5);
+      transform: scale(0.9);
+    }
+  }
+}
+
+.sub-info1 {
+  background: $clr-dark;
+  color: $clr-light;
+}
+
+.sub-info2 {
+  background: $clr-light;
+  color: $clr-dark;
+}
+
+.sub-info3 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  .title {
+    padding: 1rem;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+
+  .card-1 {
+    .title {
+      background-image: url(/imgs/beach.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .card-1,
+  .card-3 {
+    background: $clr-dark;
+    color: $clr-light;
+    padding: 2rem;
+  }
+
+  .card-2 {
+    padding: 2rem;
+    .title {
+      background-image: url(/imgs/casino.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: $clr-light;
+    }
+
+    background: $clr-light;
+    color: $clr-dark;
+  }
+
+  .card-3 {
+    .title {
+      color: lighten($clr-light, 70);
+
+      background-image: url(/imgs/restaurant.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 3rem;
+  font-family: cursive;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  img {
+    height: 3rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .sub-info3 {
+    overflow: hidden;
+    flex-direction: row;
+
+    .card-1,
+    .card-2,
+    .card-3 {
+      width: 100%;
+    }
+  }
+}
